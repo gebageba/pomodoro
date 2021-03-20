@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
   
   function startFunction() {
     f.innerHTML = "休憩してください";
-    timerS = setInterval(countDown,1000);
+    timerS = setInterval(countDown,10);
     function countDown() {
       s.innerHTML = cntSecond--;
       if (cntSecond == 0 ){
@@ -25,8 +25,8 @@ window.addEventListener('load', () => {
       var oscillator = ctx.createOscillator();
       var gainNode = ctx.createGain();
       oscillator.detune.value = 0; // 音の高さとか調整？
-      oscillator.frequency.value = 174; // 周波数 880Hz
-      gainNode.gain.value = 0.05; // 音量
+      oscillator.frequency.value = 200; // 周波数 880Hz
+      gainNode.gain.value = 0.1; // 音量
       
       oscillator.connect(gainNode);
       gainNode.connect(ctx.destination);

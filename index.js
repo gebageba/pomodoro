@@ -1,19 +1,22 @@
 window.addEventListener('load', () => {
   const f = document.getElementById('time');
   const s = document.getElementById('second');
+  const h = document.getElementById('hour');
   const stop = document.getElementById('stop');
   let timerS;
-  let timerH;
   let cntSecond = 1499;
-  let cntHour = 24; 
 
   f.addEventListener("click", startFunction)
 
   function startFunction() {
     f.innerHTML = "集中してください";
     timerS = setInterval(countDown,1000);
+    
     function countDown() {
-      s.innerHTML = cntSecond--;
+      h.innerHTML = Math.floor(cntSecond/60);
+      s.innerHTML = cntSecond%60;
+      cntSecond--;
+      
       if (cntSecond == 0 ){
         sound("sine", 10);
       }
