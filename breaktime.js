@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
   const f = document.getElementById('time2');
-  const s = document.getElementById('second2');
+  const s = document.getElementById('second');
+  const h = document.getElementById('hour');
   const stop = document.getElementById('stop2');
   let timerS;
   let sound;
@@ -11,11 +12,14 @@ window.addEventListener('load', () => {
   
   function startFunction() {
     f.innerHTML = "休憩してください";
-    timerS = setInterval(countDown,10);
+    timerS = setInterval(countDown,1000);
     function countDown() {
-      s.innerHTML = cntSecond--;
+      h.innerHTML = Math.floor(cntSecond/60);
+      s.innerHTML = cntSecond%60;
+      cntSecond--;
+      
       if (cntSecond == 0 ){
-        sound('sawtooth', 10);
+        sound("triangle", 10);
       }
     }
     
