@@ -6,22 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro App</title>
   <script src="index.js"></script>
+  <script src="breaktime.js"></script>
+  <script src="api.js"></script>
+  <script src="list.js"></script>
+  <script src="lists.js"></script>
   <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
   <section>
     <div>
       <h1>集中アプリ</h1>
-      <p>タイマー</p>
-      <p><span id="hour">24</span> : <span id="second">60</span></p>
+      <p>集中タイマー</p>
+      <p><span id="second">1500秒</span></p>
     </div>
     <div id="time">
-      <button>25分集中！</button>
+      <button>25分(1500秒)集中！</button>
     </div>
-    <div id="stop">
+    <p>休憩タイマー</p>
+      <p><span id="second2">300秒</span></p>
+    </div>
+    <div id="time2">
+      <button>5分(300秒)集中！</button>
+    </div>
+    <div id="stop2">
     </div>
 
   </section>
+
+  <header class="header">
+    <h1 class="title">Todo List</h1>
+  </header>
+  <ul class="todo js-addTask-target"></ul>
+  <form>
+    <input class="js-addTask-value" type="text" />
+    <button class="js-addTask-trigger" type="button">タスクを登録する</button>
+  </form>
   
+
+  <section>
+    <div>
+      <h1>やることリスト</h1>
+      <input type="text" id="text">
+      <div id="newlist">
+      <button>新規作成</button></div>
+      <button id="editlist">編集</button>
+      <button id="deletelist">削除</button>
+    </div>
+    <ol>
+      <li id="lists"></li>
+    </ol>
+  </section>
+
+
+  <table id="producttable">
+    <thead>
+      <tr>
+        <td>UPC_Code</td>
+        <td>Product_Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 必要に応じて既存のデータをここに含められます。 -->
+    </tbody>
+  </table>
+  
+  <template id="productrow">
+    <tr>
+      <td class="record"></td>
+      <td></td>
+    </tr>
+  </template>
 </body>
 </html>

@@ -1,21 +1,21 @@
 window.addEventListener('load', () => {
-  const f = document.getElementById('time');
-  const s = document.getElementById('second');
-  const stop = document.getElementById('stop');
+  const f = document.getElementById('time2');
+  const s = document.getElementById('second2');
+  const stop = document.getElementById('stop2');
   let timerS;
-  let timerH;
-  let cntSecond = 1499;
-  let cntHour = 24; 
+  let sound;
+  let cntSecond = 299;
+
 
   f.addEventListener("click", startFunction)
-
+  
   function startFunction() {
-    f.innerHTML = "集中してください";
+    f.innerHTML = "休憩してください";
     timerS = setInterval(countDown,1000);
     function countDown() {
       s.innerHTML = cntSecond--;
       if (cntSecond == 0 ){
-        sound("sine", 10);
+        sound('sawtooth', 10);
       }
     }
     
@@ -36,3 +36,4 @@ window.addEventListener('load', () => {
     }
   }
 })
+
