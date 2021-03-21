@@ -7,15 +7,13 @@
   <title>Pomodoro App</title>
   <script src="index.js"></script>
   <script src="breaktime.js"></script>
-  <script src="api.js"></script>
-  <script src="list.js"></script>
   <script src="lists.js"></script>
   <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
   <section>
     <div>
-      <h1>集中アプリ</h1>
+      <h1 onmouseover="this.style.backgroundColor='red'">集中アプリ</h1>
       <p><span id="hour">00</span>:<span id="second">00</span></p>
     </div>
     <div >
@@ -23,10 +21,12 @@
       <button id="time2">5分休憩</button>
     </div>
     <div id="stop2">
+      <input type="button" value="停止">
     </div>
 
   </section>
 
+  <section>
   <header class="header">
     <h1 class="title">Todo List</h1>
   </header>
@@ -35,7 +35,9 @@
     <input class="js-addTask-value" type="text" />
     <button class="js-addTask-trigger" type="button">タスクを登録する</button>
   </form>
-  
+  <iframe name="iframe_bb" height="300px" width="100%" title="Iframe Example"></iframe>
+  <p><a href="https://www.youtube.com/results?search_query=js+freecodecamp" target="iframe_bb">W3Schools.com</a></p>
+</section>
 
   <section>
     <div>
@@ -43,7 +45,7 @@
       <input type="text" id="text">
       <div id="newlist">
       <button>新規作成</button></div>
-      <button id="editlist">編集</button>
+      <button id="donelist">完了</button>
       <button id="deletelist">削除</button>
     </div>
     <ol>
@@ -52,23 +54,5 @@
   </section>
 
 
-  <table id="producttable">
-    <thead>
-      <tr>
-        <td>UPC_Code</td>
-        <td>Product_Name</td>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- 必要に応じて既存のデータをここに含められます。 -->
-    </tbody>
-  </table>
-  
-  <template id="productrow">
-    <tr>
-      <td class="record"></td>
-      <td></td>
-    </tr>
-  </template>
 </body>
 </html>
